@@ -1,26 +1,37 @@
-def open_file(filename):
-  file = open(filename, "rt") #open a file for reading
-  list_of_lines = file.readlines() #read each line into a list 
-  print(list_of_lines)
+def encrypt_letter(P,K):
+  if ord(P)>=ord("a") and ord(P)<=ord("z"):
+    #WRITE THIS
+    encrypted_letter = "?"
+    return encrypted_letter
+  elif ord(P)>=ord("A") and ord(P)<=ord("Z"):
+    #WRITE THIS
+    encrypted_letter = "?"
+    return encrypted_letter
+  else:
+    return P
 
-  list_of_words = [] #create an empty list 
-  for line in list_of_lines:
-    line_split = line.split() #split each line into a list of words
-    for word in line_split:
-      list_of_words.append(word) #add each word to the list
-    list_of_words.append("\n") #add a newline character at the end of each line
-  return list_of_words
+def encrypt_word(P,K):
+  encrypted_word =""
+  for letter in P:
+    encrypted_word +=encrypt_letter(letter,K)
+  return encrypted_word
 
-def write_file(filename, list_of_words):
-  file = open(filename, "w")
-  for word in list_of_words:
-    #how do you add the word to the file?
-    if word != "\n":
-      file.write(word + " ")
-    else:
-      file.write(word)
-  file.close()
+def encrypt_message(P,K):
+  encrypted_message=[]
+  for w in P:
+    encrypted_message.append(encrypt_word(w,K))
+  return encrypted_message
 
+def decrypt_letter(C,K):
+  #WRITE THIS FUNCTION
+  return C
 
-list_of_words = open_file("poem.txt")
-write_file("poem2.txt", list_of_words)
+def decrypt_word(C,K):
+  #WRITE THIS FUNCTION
+  decrypted_word = ""
+  return decrypted_word
+
+def decrypt_message(C,K):
+  #WRITE THIS FUNCTION
+  decrypted_message =[]
+  return decrypted_message
