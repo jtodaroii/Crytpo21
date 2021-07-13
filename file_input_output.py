@@ -1,8 +1,6 @@
 def open_file(filename):
   file = open(filename, "rt") #open a file for reading
   list_of_lines = file.readlines() #read each line into a list 
-  print(list_of_lines)
-
   list_of_words = [] #create an empty list 
   for line in list_of_lines:
     line_split = line.split() #split each line into a list of words
